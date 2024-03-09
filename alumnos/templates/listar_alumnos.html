@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Alumnos</title>
+</head>
+<body>
+    <h1>Listado de Alumnos</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Carnet</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Correo Electrónico</th>
+                <th>Fecha de Nacimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alumno in alumnos %}
+                <tr>
+                    <td>{{ alumno.carnet }}</td>
+                    <td>{{ alumno.nombres }}</td>
+                    <td>{{ alumno.apellidos }}</td>
+                    <td>{{ alumno.correo_electronico }}</td>
+                    <td>{{ alumno.fecha_nacimiento }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Estadísticas</h2>
+    <p>Promedio de Edad: {{ estadisticas.promedio_edad }}</p>
+    <p>Edades: {{ estadisticas.edades }}</p>
+</body>
+</html>
